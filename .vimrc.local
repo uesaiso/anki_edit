@@ -1,5 +1,9 @@
 let g:surround_44 = "{{c1::\r}}"
-
 nnoremap <buffer> <silent> <Space><Space> :%s/\s\+//g<cr>
 vmap <buffer> , S,
 nmap <buffer> , ysiw,
+
+augroup anki
+  autocmd!
+  autocmd BufEnter,BufReadPost *.html silent! CocDisable
+augroup END
